@@ -11,4 +11,4 @@ A simple task tracker application built with HTML, CSS, and JavaScript.
 
 ## Purpose
 
-This project is being developed as part of a staged DevOps assignment using GitHub Actions and GitHub Pages.
+We are testing to se the CI by branching out
