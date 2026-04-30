@@ -5,7 +5,18 @@ const totalTasks = document.getElementById("totalTasks");
 const completedTasks = document.getElementById("completedTasks");
 const remainingTasks = document.getElementById("remainingTasks");
 
-let tasks = [];
+const STORAGE_KEY = "task-tracker-app-tasks";
+
+let tasks = loadTasks();
+
+function loadTasks() {
+  const savedTasks = localStorage.getItem(STORAGE_KEY);
+  return savedTasks ? JSON.parse(savedTasks) : [];
+}
+
+function saveTasks() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+}
 
 function updateSummary() {
   const total = tasks.length;
@@ -66,17 +77,20 @@ function addTask() {
     completed: false
   });
 
+  saveTasks();
   taskInput.value = "";
   renderTasks();
 }
 
 function toggleTask(index) {
   tasks[index].completed = !tasks[index].completed;
+  saveTasks();
   renderTasks();
 }
 
 function deleteTask(index) {
   tasks.splice(index, 1);
+  saveTasks();
   renderTasks();
 }
 
