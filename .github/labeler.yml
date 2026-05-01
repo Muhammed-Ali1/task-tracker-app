@@ -1,0 +1,10 @@
+frontend:
+  - 'index.html'
+  - 'css/**'
+  - 'js/**'
+
+infrastructure:
+  - 'terraform/**'
+
+ci:
+  - '.github/workflows/**'
