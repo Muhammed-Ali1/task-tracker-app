@@ -1,10 +1,16 @@
 frontend:
-  - 'index.html'
-  - 'css/**'
-  - 'js/**'
+  - changed-files:
+      - any-glob-to-any-file:
+          - "index.html"
+          - "css/**"
+          - "js/**"
 
 infrastructure:
-  - 'terraform/**'
+  - changed-files:
+      - any-glob-to-any-file:
+          - "terraform/**"
 
 ci:
-  - '.github/workflows/**'
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
