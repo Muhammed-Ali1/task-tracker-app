@@ -12,5 +12,5 @@ terraform {
 provider "random" {}
 
 resource "random_id" "example" {
-  byte_length = 4
+  byte_length = 6
 }
